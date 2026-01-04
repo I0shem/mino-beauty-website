@@ -11,7 +11,7 @@
 			<h2
 				class="font-serif text-4xl md:text-5xl text-mino-black dark:text-white mb-8 leading-tight transition-colors"
 			>
-				Краса не потребує <br /> <span class="italic text-gray-500">надмірностей</span>
+				Краса не потребує <br /> <span class="italic text-gray-500">надмірностей !</span>
 			</h2>
 
 			<div class="w-20 h-px bg-mino-black dark:bg-white mx-auto mb-10 transition-colors"></div>
