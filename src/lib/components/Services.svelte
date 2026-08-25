@@ -1,12 +1,10 @@
 <script>
 	// Тут можна буде легко змінити ціни
 	const services = [
-		{ name: 'Жіноча стрижка (комплекс)', price: '800 ₴' },
-		{ name: 'Укладка волосся (денна)', price: '500 ₴' },
-		{ name: 'Вечірній макіяж', price: '1200 ₴' },
-		{ name: 'Догляд за обличчям (SPA)', price: '1500 ₴' },
-		{ name: 'Манікюр + покриття', price: '750 ₴' },
-		{ name: 'Корекція брів', price: '400 ₴' }
+		{ name: 'Манікюр (покриття+укріплення+чистка)', price: '800 ₴' },
+		{ name: 'Чоловіча стрижка', price: '300 ₴' },
+		{ name: 'Тотальна реконструкція (середня довжина волосся)', price: '3200 ₴' },
+		{ name: 'Апаратний (педикюр+чистка стопи+покриття+укріплення)', price: '800 ₴' }
 	];
 </script>
 
@@ -41,7 +39,7 @@
 
 		<div class="text-center mt-12">
 			<a
-				href="https://alteg.io"
+				href="https://www.instagram.com/stories/highlights/17886770844285784/"
 				class="text-sm dark:text-sm-white underline underline-offset-4 text-gray-500 hover:text-mino-gold transition-colors"
 				>Переглянути повний прайс</a
 			>

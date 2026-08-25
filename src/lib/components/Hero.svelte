@@ -2,7 +2,12 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 
-	let heroTitle, heroSubtitle, heroBtn;
+	/** @type {any} */
+	let heroTitle = null;
+	/** @type {any} */
+	let heroSubtitle = null;
+	/** @type {any} */
+	let heroBtn = null;
 
 	onMount(() => {
 		const tl = gsap.timeline();
@@ -12,28 +17,37 @@
 	});
 </script>
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
-	<div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat fixed-bg">
-		<div class="absolute inset-0 bg-black/50 dark:bg-[#121212]"></div>
+<section
+	class="relative h-screen flex items-center justify-center overflow-hidden transition-colors duration-500"
+>
+	<div class="absolute inset-0 animate-gradient transition-opacity duration-500">
+		<div class="absolute inset-0 bg-white/30 dark:bg-black/20 transition-colors duration-500"></div>
 	</div>
 
-	<div class="relative z-10 text-center text-white px-4 max-w-4xl">
+	<div class="relative z-10 text-center px-4 max-w-4xl">
 		<h1
 			bind:this={heroTitle}
-			class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight"
+			class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight drop-shadow-sm text-mino-black dark:text-white transition-colors duration-300"
 		>
 			Мистецтво <span class="italic text-mino-gold">Краси</span>
 		</h1>
+
 		<p
 			bind:this={heroSubtitle}
-			class="text-lg md:text-xl font-light tracking-wider mb-10 max-w-xl mx-auto opacity-90"
+			class="text-lg md:text-xl font-light tracking-wider mb-10 max-w-xl mx-auto opacity-90 text-gray-800 dark:text-gray-200 transition-colors duration-300"
 		>
 			Мінімалізм. Естетика. Досконалість у кожній деталі вашого образу.
 		</p>
+
 		<div bind:this={heroBtn}>
 			<a
-				href="https://alteg.io"
-				class="inline-block border border-white text-white px-10 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-mino-black transition-all duration-300"
+				href="https://www.instagram.com/ua.mino/"
+				class="
+        inline-block px-10 py-3 text-sm uppercase tracking-widest transition-all duration-300 backdrop-blur-sm border
+        
+        border-mino-black text-mino-black hover:bg-mino-black hover:text-white
+        dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-mino-black
+      "
 			>
 				Онлайн запис
 			</a>
@@ -42,12 +56,30 @@
 </section>
 
 <style>
-	.fixed-bg {
-		background-attachment: fixed;
+	/* Анімований градієнт */
+	.animate-gradient {
+		background-size: 400% 400%;
+		animation: gradientBG 15s ease infinite;
+
+		/* СВІТЛА ТЕМА (За замовчуванням): Перлинно-сірий градієнт */
+		background-image: linear-gradient(-45deg, #f3f4f6, #ffffff, #e5e7eb, #f9fafb);
 	}
-	@media (max-width: 768px) {
-		.fixed-bg {
-			background-attachment: scroll;
+
+	/* ТЕМНА ТЕМА: Глибокий чорний градієнт */
+	/* Використовуємо :global(html.dark), щоб зловити перемикання теми */
+	:global(html.dark) .animate-gradient {
+		background-image: linear-gradient(-45deg, #000000, #1a1a1a, #0f0f0f, #241f1c);
+	}
+
+	@keyframes gradientBG {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
 		}
 	}
 </style>

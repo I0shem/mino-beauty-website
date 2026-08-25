@@ -1,42 +1,69 @@
 <script>
-	import { MoveUpRight } from 'lucide-svelte'; // Іконка стрілочки
+	import { MoveUpRight } from 'lucide-svelte';
+	import nails1 from '../assets/nail1.jpg';
+	import nails2 from '../assets/nail2.jpg';
+	import nails3 from '../assets/nail3.jpg';
+	import hair from '../assets/hair.jpg';
+	import hair1 from '../assets/hair1.jpg';
+	import toenails from '../assets/pink toenails.jpg';
+	import eyes1 from '../assets/eyes1.png';
+	import eyes2 from '../assets/eyes2.png';
+	import girl1 from '../assets/girl1.png';
 
 	const works = [
 		{
 			id: 1,
-			category: 'Вечірній образ',
-			title: 'Макіяж та укладка',
-			img: 'photo-1487412720507-e7ab37603c6f' // Жінка з макіяжем
+			category: 'Укладка',
+			title: 'Вечірній образ ',
+			img: hair
 		},
 		{
 			id: 2,
 			category: 'Манікюр',
 			title: 'Естетика мінімалізму',
-			img: 'photo-1626691796468-7d8ae60cb32f' // Руки з манікюром
+			img: nails1
 		},
 		{
 			id: 3,
-			category: 'Стрижка',
-			title: 'Геометрія форми',
-			img: 'photo-1595476108010-b4d1f102b1b1' // Стрижка боб
+			category: 'Догляд',
+			title: 'Відновлення волосся',
+			img: hair1
 		},
 		{
 			id: 4,
-			category: 'Стайлінг брів',
-			title: 'Корекція та фарбування',
-			img: 'photo-1595550912256-b24059bb08e8' // Брови/Очі
+			category: 'Манікюр',
+			title: 'Бездоганна простота',
+			img: nails2
 		},
 		{
 			id: 5,
-			category: 'Догляд',
-			title: 'Відновлення волосся',
-			img: 'photo-1560869713-7d0a29430803' // Волосся
+			category: 'Педикюр',
+			title: 'Професійний догляд',
+			img: toenails
 		},
 		{
 			id: 6,
-			category: 'Педикюр',
-			title: 'SPA-догляд',
-			img: 'photo-1516975080664-ed2fc6a32937' // Ноги/SPA
+			category: 'Манікюр',
+			title: 'Лаконічна досконалість',
+			img: nails3
+		},
+		{
+			id: 7,
+			category: 'Вії',
+			title: 'Досконалий вигин',
+			img: eyes1
+		},
+		{
+			id: 8,
+			category: 'Брови',
+			title: 'Чиста форма',
+			img: girl1
+		},
+		{
+			id: 9,
+			category: 'Вії',
+			title: 'Витончений погляд',
+			img: eyes2
 		}
 	];
 </script>
@@ -53,10 +80,10 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{#each works as work}
+			{#each works as work (work.id)}
 				<div class="group relative overflow-hidden h-[400px] cursor-pointer">
 					<img
-						src={`https://images.unsplash.com/${work.img}?w=600&q=80&auto=format&fit=crop`}
+						src={work.img}
 						alt={work.title}
 						class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
 					/>

@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Menu, X } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
-	import ThemeToggle from './ThemeToggle.svelte'; // Імпортуємо перемикач
+	import ThemeToggle from './ThemeToggle.svelte';
 
 	let isScrolled = false;
 	let isMobileMenuOpen = false;
@@ -26,17 +26,20 @@
 	};
 
 	const menuItems = [
-		{ name: 'Послуги', link: '#services' },
-		{ name: 'Результати', link: '#portfolio' },
-		{ name: 'Філософія', link: '#about' },
-		{ name: 'Контакти', link: '#footer' }
+		{ id: 1, name: 'Послуги', link: '#services' },
+		{ id: 2, name: 'Результати', link: '#portfolio' },
+		{ id: 3, name: 'Майстри', link: '#team' },
+		{ id: 4, name: 'Філософія', link: '#about' },
+		{ id: 5, name: 'Контакти', link: '#footer' }
 	];
 </script>
 
 <header
-	class="fixed top-0 left-0 w-full z-50 transition-all duration-300 {isScrolled || isMobileMenuOpen
-		? 'bg-white/95 dark:bg-mino-black/95 backdrop-blur-md shadow-sm py-3 text-mino-black dark:text-white'
-		: 'bg-transparent py-6 text-white'}"
+	class="fixed top-0 left-0 w-full z-50 transition-all duration-300
+    {isScrolled || isMobileMenuOpen
+		? 'bg-white/90 dark:bg-mino-black/90 backdrop-blur-md shadow-sm py-3'
+		: 'bg-transparent py-6'}
+    text-mino-black dark:text-white"
 >
 	<div class="container mx-auto px-6 flex justify-between items-center">
 		<a
@@ -48,7 +51,7 @@
 		</a>
 
 		<nav class="hidden md:flex gap-8 items-center">
-			{#each menuItems as item}
+			{#each menuItems as item (item.id)}
 				<a
 					href={item.link}
 					class="text-sm uppercase tracking-wide font-medium hover:text-mino-gold transition-colors relative group"
@@ -60,22 +63,26 @@
 				</a>
 			{/each}
 
-			<div class="border-l border-gray-300 dark:border-gray-700 pl-4">
+			<div class="border-l border-gray-300 dark:border-gray-700 pl-4 transition-colors">
 				<ThemeToggle />
 			</div>
 
 			<a
-				href="https://alteg.io"
+				href="https://www.instagram.com/ua.mino/"
 				target="_blank"
-				class="bg-mino-gold text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-black dark:hover:bg-white dark:hover:text-black transition-colors duration-300"
+				class="
+        bg-mino-gold text-white px-6 py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-300
+        hover:bg-mino-black dark:hover:bg-white dark:hover:text-mino-black
+      "
 			>
 				Записатись
 			</a>
 		</nav>
 
-		<div class="flex items-center gap-2 md:hidden">
+		<div class="flex items-center gap-4 md:hidden">
 			<ThemeToggle />
-			<button class="z-50 focus:outline-none ml-2" on:click={toggleMenu}>
+
+			<button class="z-50 focus:outline-none" on:click={toggleMenu} aria-label="Меню">
 				{#if isMobileMenuOpen}
 					<X size={28} />
 				{:else}
@@ -89,10 +96,10 @@
 {#if isMobileMenuOpen}
 	<div
 		transition:fade={{ duration: 200 }}
-		class="fixed inset-0 bg-white dark:bg-mino-black z-40 flex flex-col items-center justify-center md:hidden text-mino-black dark:text-white"
+		class="fixed inset-0 bg-white dark:bg-mino-black z-40 flex flex-col items-center justify-center md:hidden transition-colors duration-300"
 	>
-		<nav class="flex flex-col items-center gap-8 text-xl">
-			{#each menuItems as item}
+		<nav class="flex flex-col items-center gap-8 text-xl text-mino-black dark:text-white">
+			{#each menuItems as item (item.name)}
 				<a
 					href={item.link}
 					on:click={closeMenu}
@@ -103,9 +110,9 @@
 			{/each}
 
 			<a
-				href="https://alteg.io"
+				href="https://www.instagram.com/ua.mino/"
 				target="_blank"
-				class="mt-4 text-sm uppercase tracking-widest font-bold bg-mino-gold text-white px-8 py-3 rounded hover:bg-mino-black transition-colors"
+				class="mt-4 text-sm uppercase tracking-widest font-bold bg-mino-gold text-white px-8 py-3 hover:bg-black transition-colors"
 			>
 				Онлайн запис
 			</a>

@@ -1,9 +1,5 @@
 <script>
-	import { Instagram, Facebook, Phone, Mail, MapPin, ArrowUp } from 'lucide-svelte';
-
-	const scrollToTop = () => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	};
+	import { Instagram, Phone, Mail, MapPin } from 'lucide-svelte';
 </script>
 
 <footer
@@ -30,8 +26,13 @@
 				<ul class="space-y-4 text-sm uppercase tracking-wider text-gray-300">
 					<li><a href="#services" class="hover:text-white transition-colors">Послуги</a></li>
 					<li><a href="#portfolio" class="hover:text-white transition-colors">Результати</a></li>
+					<li><a href="#team" class="hover:text-white transition-colors">Команда</a></li>
 					<li><a href="#about" class="hover:text-white transition-colors">Про нас</a></li>
-					<li><a href="https://alteg.io" class="hover:text-white transition-colors">Запис</a></li>
+					<li>
+						<a href="https://www.instagram.com/ua.mino/" class="hover:text-white transition-colors"
+							>Запис</a
+						>
+					</li>
 				</ul>
 			</div>
 
@@ -39,7 +40,7 @@
 				<h4 class="font-serif text-xl mb-2 text-mino-gold">Контакти</h4>
 
 				<a
-					href="tel:+380990000000"
+					href="tel:+380934236956"
 					class="flex items-center gap-4 hover:text-white transition-colors group"
 				>
 					<div
@@ -47,11 +48,11 @@
 					>
 						<Phone size={16} />
 					</div>
-					<span>+38 (099) 000 00 00</span>
+					<span>+38 (093) 423-69-56</span>
 				</a>
 
 				<a
-					href="mailto:info@mino.ua"
+					href="mailto:mino.ua.vn@gmail.com"
 					class="flex items-center gap-4 hover:text-white transition-colors group"
 				>
 					<div
@@ -59,18 +60,22 @@
 					>
 						<Mail size={16} />
 					</div>
-					<span>info@mino.ua</span>
+					<span>mino.ua.vn@gmail.com</span>
 				</a>
-
-				<div class="flex items-center gap-4 group">
+				<a
+					href="https://maps.app.goo.gl/hKjH9r4vNUWgb85V8"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-4 hover:text-white transition-colors group"
+				>
 					<div
 						class="p-2 border border-gray-700 rounded-full group-hover:border-mino-gold transition-colors"
 					>
 						<MapPin size={16} />
 					</div>
-					<span>м. Вінниця, Немирівське шосе, 94Е</span>
-				</div>
 
+					<span>м. Вінниця, вул. Магістратська, 11</span>
+				</a>
 				<div class="flex gap-4 mt-4">
 					<a
 						href="https://www.instagram.com/ua.mino/"
@@ -79,13 +84,6 @@
 					>
 						<Instagram size={20} />
 					</a>
-					<a
-						href="https://facebook.com"
-						target="_blank"
-						class="p-2 bg-white text-black hover:bg-mino-gold transition-colors rounded-full"
-					>
-						<Facebook size={20} />
-					</a>
 				</div>
 			</div>
 		</div>
@@ -93,14 +91,7 @@
 		<div
 			class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-300 uppercase tracking-wider"
 		>
-			<p>&copy; 2026 MINO Beauty Space. All rights reserved.</p>
-
-			<button
-				on:click={scrollToTop}
-				class="flex items-center gap-2 mt-4 md:mt-0 hover:text-mino-gold transition-colors cursor-pointer"
-			>
-				Вгору <ArrowUp size={14} />
-			</button>
+			<p>&copy; 2026 MINO</p>
 		</div>
 	</div>
 </footer>
