@@ -1,14 +1,14 @@
 <script>
 	import { MoveUpRight } from 'lucide-svelte';
-	import nails1 from '../assets/nail1.jpg';
-	import nails2 from '../assets/nail2.jpg';
-	import nails3 from '../assets/nail3.jpg';
-	import hair from '../assets/hair.jpg';
-	import hair1 from '../assets/hair1.jpg';
-	import toenails from '../assets/pink toenails.jpg';
-	import eyes1 from '../assets/eyes1.png';
-	import eyes2 from '../assets/eyes2.png';
-	import girl1 from '../assets/girl1.png';
+	import nails1 from '../assets/nail1.webp';
+	import nails2 from '../assets/nail2.webp';
+	import nails3 from '../assets/nail3.webp';
+	import hair from '../assets/hair.webp';
+	import hair1 from '../assets/hair1.webp';
+	import toenails from '../assets/pink toenails.webp';
+	import eyes1 from '../assets/eyes1.webp';
+	import eyes2 from '../assets/eyes2.webp';
+	import girl1 from '../assets/girl1.webp';
 
 	const works = [
 		{

@@ -1,7 +1,7 @@
 <script>
-	import nika from '../assets/nika.jpg';
-	import victoria from '../assets/victoria.png';
-	import diana from '../assets/diana.jpg';
+	import nika from '../assets/nika.webp';
+	import victoria from '../assets/victoria.webp';
+	import diana from '../assets/diana.webp';
 	// Дані ваших майстрів. Ви можете легко змінювати текст та додавати нових.
 	const team = [
 		{
